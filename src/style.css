@@ -1,5 +1,5 @@
 body {
-  background-color: #f9f7fe;
+  background-color: #8c71ce;
   font-family: "Roboto", sans-serif;
 }
 
@@ -20,8 +20,9 @@ header {
   border-bottom: 1px solid #f9f7fe;
   padding: 0 0 30px 0;
 }
+
 .search-form-input {
-  background-color: #f9f7fe;
+  background-color: #d1ced9;
   border: none;
   border-radius: 6px;
   width: 70%;
