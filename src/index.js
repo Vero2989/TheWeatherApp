@@ -10,15 +10,13 @@ function refreshWeather(response) {
   console.log(response.data.time);
 
   cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
-  timeElement.innerHTML = `${date.getDay()}:${date.getHours()}:${date.getMinutes()}`;
 }
-
-fuction FormDate (date) {
-  let day =date.getDay();
+function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [
@@ -34,9 +32,11 @@ fuction FormDate (date) {
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
-return `${day} ${hours}:${minutes}`;
-}
+
 function searchCity(city) {
   let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
